@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 id="timer">
+    
+</h2>
+
+<table class="game-board">
+    <tbody>
+        {% for row in session['board'] %}
+        <tr>
+            {% for letter in row %}
+            <td>{{ letter }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form id="guess-form" method="POST">
+    <input class="guess" name="guess" type="text" autofocus>
+    <button>Guess</button>
+</form>
+
+<p id="message">
+    
+</p>
+
+<p id="score">
+
+</p>
+
+{% endblock %}
